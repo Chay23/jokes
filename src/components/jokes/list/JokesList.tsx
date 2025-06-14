@@ -8,9 +8,7 @@ export default function JokesList() {
 		<>
 			<Grid container spacing={3}>
 				{jokes.map((joke) => (
-					<Grid key={joke.id} size={{ xs: 3 }}>
-						<JokeCard key={joke.id} joke={joke} />
-					</Grid>
+					<JokeCard key={joke.id} joke={joke} />
 				))}
 			</Grid>
 		</>
