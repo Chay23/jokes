@@ -30,5 +30,12 @@ export const theme = createTheme({
 				}),
 			},
 		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					borderRadius: +theme.shape.borderRadius * 2,
+				}),
+			},
+		},
 	},
 });

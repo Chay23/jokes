@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux/hooks';
 import { deleteJoke, selectJoke } from '../../../store/jokes/jokesSlice';
 import { closeModal } from '../../../store/modals/modalsSlice';
 
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import Heading from '../../UI/headings/Heading';
 import Modal from '../../modals/Modal';
 
@@ -27,9 +27,16 @@ export default function DeleteJokeModal() {
 
 	return (
 		<Modal id={DELETE_JOKE_MODAL} onClose={handleModalClose}>
-			<Heading variant='h5' sx={{ marginBottom: 2 }}>
+			<Heading variant='h5' sx={{ marginBottom: 1, textAlign: 'center' }}>
 				Are you sure you want to delete the joke?
 			</Heading>
+			<Typography
+				variant='subtitle1'
+				sx={{ marginBottom: 2 }}
+				color='textSecondary'
+			>
+				Confirm that you want to delete the joke
+			</Typography>
 			<Box sx={{ display: 'flex', gap: 1 }}>
 				<Button variant='contained' onClick={handleJokeDelete}>
 					Delete

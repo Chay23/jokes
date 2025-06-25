@@ -41,8 +41,14 @@ export default function CreateJokeModal() {
 	};
 
 	return (
-		<Modal id={CREATE_JOKE_MODAL} onClose={handleModalClose}>
-			<Heading variant='h5'>Create a new joke</Heading>
+		<Modal
+			id={CREATE_JOKE_MODAL}
+			onClose={handleModalClose}
+			sx={{ minWidth: 400 }}
+		>
+			<Box sx={{ display: 'flex' }}>
+				<Heading variant='h5'>Create a new joke</Heading>
+			</Box>
 			<Box
 				component='form'
 				sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}
@@ -72,7 +78,7 @@ export default function CreateJokeModal() {
 					error={!!errors.punchline}
 					helperText={errors.punchline ? errors.punchline.message : ''}
 				/>
-				<Box sx={{ display: 'flex', gap: 1 }}>
+				<Box sx={{ display: 'flex', gap: 1, marginTop: 2 }}>
 					<Button variant='contained' type='submit'>
 						Create
 					</Button>
