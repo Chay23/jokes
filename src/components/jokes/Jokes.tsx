@@ -8,7 +8,6 @@ import {
 	updateLocalJokesCursor,
 } from '../../store/jokes/jokesSlice';
 
-import Paper from '@mui/material/Paper';
 import JokesError from './error/JokesError';
 import JokesList from './list/JokesList';
 import CreateJokeModal from './create/CreateJokeModal';
@@ -94,7 +93,7 @@ export default function Jokes() {
 
 	return (
 		<>
-			<Paper elevation={2} sx={{ padding: 3 }}>
+			<Box>
 				{result.isError && <JokesError />}
 				{result.isLoading && <LoadingJokes />}
 				{!result.isError && (
@@ -128,7 +127,7 @@ export default function Jokes() {
 						</Box>
 					</>
 				)}
-			</Paper>
+			</Box>
 			<CreateJokeModal />
 			<DeleteJokeModal />
 		</>
